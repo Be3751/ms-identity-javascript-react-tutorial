@@ -1,13 +1,14 @@
 {
     "credentials": {
-        "tenantName": "fabrikamb2c.onmicrosoft.com",
-        "clientID": "93733604-cc77-4a3c-a604-87084dd55348"
+        "tenantName": "jcsampleb2c.onmicrosoft.com",
+        "clientID": "098fa071-e7a9-4bab-bea7-88d8b5d6e727",
+        "issuer": "https://jcsampleb2c.b2clogin.com/6db832bb-be82-45de-9f10-3780dce57534/v2.0/"
     },
     "policies": {
-        "policyName": "B2C_1_susi"
+        "policyName": "B2C_1_signup-signin-jscom"
     },
     "metadata": {
-        "b2cDomain": "fabrikamb2c.b2clogin.com",
+        "b2cDomain": "jcsampleb2c.b2clogin.com",
         "authority": "login.microsoftonline.com",
         "discovery": ".well-known/openid-configuration",
         "version": "v2.0"
@@ -21,7 +22,7 @@
     "protectedRoutes": {
         "hello": {
             "endpoint": "/hello",
-            "scopes": ["demo.read"]
+            "scopes": ["tasks.read", "tasks.write"]
         }
     }
 }

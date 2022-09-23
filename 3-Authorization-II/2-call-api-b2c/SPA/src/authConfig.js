@@ -12,22 +12,22 @@ import { LogLevel } from "@azure/msal-browser";
  */
 export const b2cPolicies = {
     names: {
-        signUpSignIn: "b2c_1_susi",
-        forgotPassword: "b2c_1_reset",
-        editProfile: "b2c_1_edit_profile"
+        signUpSignIn: "B2C_1_signup-signin-jscom",
+        forgotPassword: "B2C_1_reset-pw-jscom",
+        editProfile: "B2C_1_edit_jscom"
     },
     authorities: {
         signUpSignIn: {
-            authority: "https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/b2c_1_susi",
+            authority: "https://jcsampleb2c.b2clogin.com/jcsampleb2c.onmicrosoft.com/B2C_1_signup-signin-jscom",
         },
         forgotPassword: {
-            authority: "https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/b2c_1_reset",
+            authority: "https://jcsampleb2c.b2clogin.com/jcsampleb2c.onmicrosoft.com/B2C_1_reset-pw-jscom",
         },
         editProfile: {
-            authority: "https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/b2c_1_edit_profile"
+            authority: "https://jcsampleb2c.b2clogin.com/jcsampleb2c.onmicrosoft.com/B2C_1_edit_jscom"
         }
     },
-    authorityDomain: "fabrikamb2c.b2clogin.com"
+    authorityDomain: "jcsampleb2c.b2clogin.com"
 }
 
 
@@ -38,7 +38,7 @@ export const b2cPolicies = {
  */
 export const msalConfig = {
     auth: {
-        clientId: "2fdd06f3-7b34-49a3-a78b-0cf1dd87878e", // This is the ONLY mandatory field that you need to supply.
+        clientId: "e5d35d60-cf12-4781-8d55-b3ff3c73a802", // This is the ONLY mandatory field that you need to supply.
         authority: b2cPolicies.authorities.signUpSignIn.authority, // Choose SUSI as your default authority.
         knownAuthorities: [b2cPolicies.authorityDomain], // Mark your B2C tenant's domain as trusted.
         redirectUri: "/", // You must register this URI on Azure Portal/App Registration. Defaults to window.location.origin
@@ -81,7 +81,7 @@ export const msalConfig = {
 export const protectedResources = {
     apiHello: {
         endpoint: "http://localhost:5000/hello",
-        scopes: ["https://fabrikamb2c.onmicrosoft.com/helloapi/demo.read"], // e.g. api://xxxxxx/access_as_user
+        scopes: ["https://jcsampleb2c.onmicrosoft.com/tasks-api/tasks.read", "https://jcsampleb2c.onmicrosoft.com/tasks-api/tasks.write"], // e.g. api://xxxxxx/access_as_user
     },
 }
 
